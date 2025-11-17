@@ -4,20 +4,20 @@ This project is a normalized relational database designed to simulate the data m
 The database was populated with realistic, randomly generated data, exceeding the minimum requirements with 1201 total orders.
 
 ### Features
-***Customer Management:** Stores and uniquely identifies customer records.
+**Customer Management:** Stores and uniquely identifies customer records.
 
-***Product Inventory:** Tracks book details, including price and optional ratings.
+**Product Inventory:** Tracks book details, including price and optional ratings.
 
-***Order Tracking:** Records individual transactions, linking customers to products and logging the purchase quantity and timestamp.
+**Order Tracking:** Records individual transactions, linking customers to products and logging the purchase quantity and timestamp.
 
-***Enforced Integrity:** Uses UNIQUE, NOT NULL, and CHECK constraints to maintain high data quality and prevent illogical entries.
+**Enforced Integrity:** Uses UNIQUE, NOT NULL, and CHECK constraints to maintain high data quality and prevent illogical entries.
 
-***GDPR Compliance Support:** Designed with Data Minimization and Right to Erasure principles in mind.
+**GDPR Compliance Support:** Designed with Data Minimization and Right to Erasure principles in mind.
 
 ### Technologies
-***Database Management System:** SQLite
+**Database Management System:** SQLite
 
-***Data Generation Script:** Python (using the sqlite3 and Faker library with UK locale en_GB)
+**Data Generation Script:** Python (using the sqlite3 and Faker library with UK locale en_GB)
 
 ### Database Schema
 The database employs a three-table normalized schema. | Table | Primary Key (PK) | Foreign Key (FK) | Key Columns | | :--- | :--- | :--- | :--- | | Customers | customer_id | - | customer_name, customer_email (UNIQUE, NOT NULL), customer_country | | Products | product_id | - | product_name, product_price, product_rating (allows NULL) | | Orders | order_id | customer_id, product_id | order_quantity (CHECK > 0), order_timestamp |
